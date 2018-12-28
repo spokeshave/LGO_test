@@ -284,7 +284,7 @@ ErrorHandler:
             ClearFanTimer() 'Clear any existing fan timer
         End If
 
-        'Update status buttons
+        'Update status buttons  
         UpdateRelayStatus()
     End Sub
 
