@@ -525,5 +525,14 @@ ErrorHandler:
         UpdateRelayStatus()
     End Sub
 
-   
+    Private Sub EStop_Btn_Click(sender As Object, e As EventArgs) Handles EStop_Btn.Click
+
+        NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(2, 1) 'Turn off all roof motion relays
+        NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(1, 1)
+        NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(3, 1)
+
+        MessageBox.Show("Roof Motion Emergency Stop!") 'If ADCs are not configured properly for either position, show warning and disable buttons
+
+    End Sub
+
 End Class

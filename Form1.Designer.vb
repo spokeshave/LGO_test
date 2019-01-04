@@ -43,6 +43,7 @@ Partial Class LGOMain
         Me.FansStatusBtn = New System.Windows.Forms.Button()
         Me.FansToggleBtn = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.EStop_Btn = New System.Windows.Forms.Button()
         Me.RoofCloseBtn = New System.Windows.Forms.Button()
         Me.RoofOpenBtn = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -95,6 +96,7 @@ Partial Class LGOMain
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.IRStatusBtn = New System.Windows.Forms.Button()
         Me.IRToggleBtn = New System.Windows.Forms.Button()
+        Me.Label23 = New System.Windows.Forms.Label()
         CType(Me.RadarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ScopeGroup.SuspendLayout()
         Me.CamFocuserGroup.SuspendLayout()
@@ -301,6 +303,8 @@ Partial Class LGOMain
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox1.Controls.Add(Me.Label23)
+        Me.GroupBox1.Controls.Add(Me.EStop_Btn)
         Me.GroupBox1.Controls.Add(Me.RoofCloseBtn)
         Me.GroupBox1.Controls.Add(Me.RoofOpenBtn)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -309,10 +313,22 @@ Partial Class LGOMain
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(40, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(299, 154)
+        Me.GroupBox1.Size = New System.Drawing.Size(299, 171)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Roof Control"
+        '
+        'EStop_Btn
+        '
+        Me.EStop_Btn.BackColor = System.Drawing.Color.Red
+        Me.EStop_Btn.Enabled = False
+        Me.EStop_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EStop_Btn.Location = New System.Drawing.Point(212, 100)
+        Me.EStop_Btn.Name = "EStop_Btn"
+        Me.EStop_Btn.Size = New System.Drawing.Size(75, 51)
+        Me.EStop_Btn.TabIndex = 13
+        Me.EStop_Btn.Text = "STOP"
+        Me.EStop_Btn.UseVisualStyleBackColor = False
         '
         'RoofCloseBtn
         '
@@ -338,11 +354,11 @@ Partial Class LGOMain
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(60, 73)
+        Me.Label2.Location = New System.Drawing.Point(29, 70)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 13)
+        Me.Label2.Size = New System.Drawing.Size(133, 13)
         Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Roof Movement"
+        Me.Label2.Text = "Automatic Roof Movement"
         '
         'Label1
         '
@@ -406,7 +422,7 @@ Partial Class LGOMain
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(361, 15)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(514, 151)
+        Me.GroupBox2.Size = New System.Drawing.Size(514, 168)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Relay Status"
@@ -816,7 +832,7 @@ Partial Class LGOMain
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(959, 82)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(200, 84)
+        Me.GroupBox3.Size = New System.Drawing.Size(200, 101)
         Me.GroupBox3.TabIndex = 16
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "IR Illuminator"
@@ -842,6 +858,16 @@ Partial Class LGOMain
         Me.IRToggleBtn.TabIndex = 0
         Me.IRToggleBtn.Text = "Power On/Off"
         Me.IRToggleBtn.UseVisualStyleBackColor = True
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(209, 154)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(85, 13)
+        Me.Label23.TabIndex = 14
+        Me.Label23.Text = "Emergency Stop"
         '
         'LGOMain
         '
@@ -950,5 +976,6 @@ Partial Class LGOMain
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
-
+    Friend WithEvents EStop_Btn As Button
+    Friend WithEvents Label23 As Label
 End Class
