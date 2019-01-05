@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LGOMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LGOMain
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.NcdComponent1 = New NCD.NCDComponent(Me.components)
@@ -32,7 +32,7 @@ Partial Class LGOMain
         Me.ScopeStatusBtn = New System.Windows.Forms.Button()
         Me.ScopeToggleBtn = New System.Windows.Forms.Button()
         Me.CamFocuserGroup = New System.Windows.Forms.GroupBox()
-        Me.CamFocStatusBtn = New System.Windows.Forms.Button()
+        Me.AuxStatusBtn = New System.Windows.Forms.Button()
         Me.CamFocToggleBtn = New System.Windows.Forms.Button()
         Me.DewStrapsGroup = New System.Windows.Forms.GroupBox()
         Me.DewStrap2StatusBtn = New System.Windows.Forms.Button()
@@ -43,6 +43,7 @@ Partial Class LGOMain
         Me.FansStatusBtn = New System.Windows.Forms.Button()
         Me.FansToggleBtn = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.EStop_Btn = New System.Windows.Forms.Button()
         Me.RoofCloseBtn = New System.Windows.Forms.Button()
         Me.RoofOpenBtn = New System.Windows.Forms.Button()
@@ -62,8 +63,8 @@ Partial Class LGOMain
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Relay10StatusBtn = New System.Windows.Forms.Button()
+        Me.Relay9StatusBtn = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Relay8StatusBtn = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -96,7 +97,11 @@ Partial Class LGOMain
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.IRStatusBtn = New System.Windows.Forms.Button()
         Me.IRToggleBtn = New System.Windows.Forms.Button()
-        Me.Label23 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Camera2StatusBtn = New System.Windows.Forms.Button()
+        Me.Camera2ToggleBtn = New System.Windows.Forms.Button()
+        Me.Camera1StatusBtn = New System.Windows.Forms.Button()
+        Me.Camera1ToggleBtn = New System.Windows.Forms.Button()
         CType(Me.RadarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ScopeGroup.SuspendLayout()
         Me.CamFocuserGroup.SuspendLayout()
@@ -106,6 +111,7 @@ Partial Class LGOMain
         Me.GroupBox2.SuspendLayout()
         CType(Me.LGOPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'NcdComponent1
@@ -141,10 +147,10 @@ Partial Class LGOMain
         Me.ScopeGroup.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ScopeGroup.Controls.Add(Me.ScopeStatusBtn)
         Me.ScopeGroup.Controls.Add(Me.ScopeToggleBtn)
-        Me.ScopeGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ScopeGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ScopeGroup.Location = New System.Drawing.Point(40, 204)
         Me.ScopeGroup.Name = "ScopeGroup"
-        Me.ScopeGroup.Size = New System.Drawing.Size(200, 84)
+        Me.ScopeGroup.Size = New System.Drawing.Size(150, 84)
         Me.ScopeGroup.TabIndex = 6
         Me.ScopeGroup.TabStop = False
         Me.ScopeGroup.Text = "Telescope Power"
@@ -154,9 +160,9 @@ Partial Class LGOMain
         Me.ScopeStatusBtn.BackColor = System.Drawing.Color.Red
         Me.ScopeStatusBtn.Enabled = False
         Me.ScopeStatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ScopeStatusBtn.Location = New System.Drawing.Point(113, 21)
+        Me.ScopeStatusBtn.Location = New System.Drawing.Point(78, 22)
         Me.ScopeStatusBtn.Name = "ScopeStatusBtn"
-        Me.ScopeStatusBtn.Size = New System.Drawing.Size(75, 50)
+        Me.ScopeStatusBtn.Size = New System.Drawing.Size(65, 50)
         Me.ScopeStatusBtn.TabIndex = 7
         Me.ScopeStatusBtn.Text = "SCOPE OFF"
         Me.ScopeStatusBtn.UseVisualStyleBackColor = False
@@ -164,9 +170,9 @@ Partial Class LGOMain
         'ScopeToggleBtn
         '
         Me.ScopeToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ScopeToggleBtn.Location = New System.Drawing.Point(13, 22)
+        Me.ScopeToggleBtn.Location = New System.Drawing.Point(5, 22)
         Me.ScopeToggleBtn.Name = "ScopeToggleBtn"
-        Me.ScopeToggleBtn.Size = New System.Drawing.Size(91, 49)
+        Me.ScopeToggleBtn.Size = New System.Drawing.Size(68, 49)
         Me.ScopeToggleBtn.TabIndex = 0
         Me.ScopeToggleBtn.Text = "Power On/Off"
         Me.ScopeToggleBtn.UseVisualStyleBackColor = True
@@ -174,34 +180,34 @@ Partial Class LGOMain
         'CamFocuserGroup
         '
         Me.CamFocuserGroup.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.CamFocuserGroup.Controls.Add(Me.CamFocStatusBtn)
+        Me.CamFocuserGroup.Controls.Add(Me.AuxStatusBtn)
         Me.CamFocuserGroup.Controls.Add(Me.CamFocToggleBtn)
-        Me.CamFocuserGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CamFocuserGroup.Location = New System.Drawing.Point(279, 204)
+        Me.CamFocuserGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CamFocuserGroup.Location = New System.Drawing.Point(197, 204)
         Me.CamFocuserGroup.Name = "CamFocuserGroup"
-        Me.CamFocuserGroup.Size = New System.Drawing.Size(200, 84)
+        Me.CamFocuserGroup.Size = New System.Drawing.Size(154, 84)
         Me.CamFocuserGroup.TabIndex = 7
         Me.CamFocuserGroup.TabStop = False
         Me.CamFocuserGroup.Text = "AUX 12V"
         '
-        'CamFocStatusBtn
+        'AuxStatusBtn
         '
-        Me.CamFocStatusBtn.BackColor = System.Drawing.Color.Red
-        Me.CamFocStatusBtn.Enabled = False
-        Me.CamFocStatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CamFocStatusBtn.Location = New System.Drawing.Point(113, 21)
-        Me.CamFocStatusBtn.Name = "CamFocStatusBtn"
-        Me.CamFocStatusBtn.Size = New System.Drawing.Size(75, 50)
-        Me.CamFocStatusBtn.TabIndex = 7
-        Me.CamFocStatusBtn.Text = "AUX 12V OFF"
-        Me.CamFocStatusBtn.UseVisualStyleBackColor = False
+        Me.AuxStatusBtn.BackColor = System.Drawing.Color.Red
+        Me.AuxStatusBtn.Enabled = False
+        Me.AuxStatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AuxStatusBtn.Location = New System.Drawing.Point(80, 21)
+        Me.AuxStatusBtn.Name = "AuxStatusBtn"
+        Me.AuxStatusBtn.Size = New System.Drawing.Size(65, 50)
+        Me.AuxStatusBtn.TabIndex = 7
+        Me.AuxStatusBtn.Text = "AUX 12V OFF"
+        Me.AuxStatusBtn.UseVisualStyleBackColor = False
         '
         'CamFocToggleBtn
         '
         Me.CamFocToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CamFocToggleBtn.Location = New System.Drawing.Point(13, 22)
+        Me.CamFocToggleBtn.Location = New System.Drawing.Point(5, 21)
         Me.CamFocToggleBtn.Name = "CamFocToggleBtn"
-        Me.CamFocToggleBtn.Size = New System.Drawing.Size(91, 49)
+        Me.CamFocToggleBtn.Size = New System.Drawing.Size(68, 49)
         Me.CamFocToggleBtn.TabIndex = 0
         Me.CamFocToggleBtn.Text = "Power On/Off"
         Me.CamFocToggleBtn.UseVisualStyleBackColor = True
@@ -213,10 +219,10 @@ Partial Class LGOMain
         Me.DewStrapsGroup.Controls.Add(Me.DewStrap2ToggleBtn)
         Me.DewStrapsGroup.Controls.Add(Me.DewStrap1StatusBtn)
         Me.DewStrapsGroup.Controls.Add(Me.DewStrap1ToggleBtn)
-        Me.DewStrapsGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DewStrapsGroup.Location = New System.Drawing.Point(518, 204)
+        Me.DewStrapsGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DewStrapsGroup.Location = New System.Drawing.Point(691, 204)
         Me.DewStrapsGroup.Name = "DewStrapsGroup"
-        Me.DewStrapsGroup.Size = New System.Drawing.Size(402, 84)
+        Me.DewStrapsGroup.Size = New System.Drawing.Size(305, 84)
         Me.DewStrapsGroup.TabIndex = 8
         Me.DewStrapsGroup.TabStop = False
         Me.DewStrapsGroup.Text = "Dew Straps"
@@ -226,9 +232,9 @@ Partial Class LGOMain
         Me.DewStrap2StatusBtn.BackColor = System.Drawing.Color.Red
         Me.DewStrap2StatusBtn.Enabled = False
         Me.DewStrap2StatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DewStrap2StatusBtn.Location = New System.Drawing.Point(313, 21)
+        Me.DewStrap2StatusBtn.Location = New System.Drawing.Point(233, 21)
         Me.DewStrap2StatusBtn.Name = "DewStrap2StatusBtn"
-        Me.DewStrap2StatusBtn.Size = New System.Drawing.Size(75, 50)
+        Me.DewStrap2StatusBtn.Size = New System.Drawing.Size(65, 50)
         Me.DewStrap2StatusBtn.TabIndex = 9
         Me.DewStrap2StatusBtn.Text = "DEW STRAP #2 OFF"
         Me.DewStrap2StatusBtn.UseVisualStyleBackColor = False
@@ -236,9 +242,9 @@ Partial Class LGOMain
         'DewStrap2ToggleBtn
         '
         Me.DewStrap2ToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DewStrap2ToggleBtn.Location = New System.Drawing.Point(213, 22)
+        Me.DewStrap2ToggleBtn.Location = New System.Drawing.Point(159, 22)
         Me.DewStrap2ToggleBtn.Name = "DewStrap2ToggleBtn"
-        Me.DewStrap2ToggleBtn.Size = New System.Drawing.Size(91, 49)
+        Me.DewStrap2ToggleBtn.Size = New System.Drawing.Size(68, 49)
         Me.DewStrap2ToggleBtn.TabIndex = 8
         Me.DewStrap2ToggleBtn.Text = "Power On/Off"
         Me.DewStrap2ToggleBtn.UseVisualStyleBackColor = True
@@ -248,9 +254,9 @@ Partial Class LGOMain
         Me.DewStrap1StatusBtn.BackColor = System.Drawing.Color.Red
         Me.DewStrap1StatusBtn.Enabled = False
         Me.DewStrap1StatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DewStrap1StatusBtn.Location = New System.Drawing.Point(113, 21)
+        Me.DewStrap1StatusBtn.Location = New System.Drawing.Point(81, 22)
         Me.DewStrap1StatusBtn.Name = "DewStrap1StatusBtn"
-        Me.DewStrap1StatusBtn.Size = New System.Drawing.Size(75, 50)
+        Me.DewStrap1StatusBtn.Size = New System.Drawing.Size(65, 50)
         Me.DewStrap1StatusBtn.TabIndex = 7
         Me.DewStrap1StatusBtn.Text = "DEW STRAP #1 OFF"
         Me.DewStrap1StatusBtn.UseVisualStyleBackColor = False
@@ -258,9 +264,9 @@ Partial Class LGOMain
         'DewStrap1ToggleBtn
         '
         Me.DewStrap1ToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DewStrap1ToggleBtn.Location = New System.Drawing.Point(13, 22)
+        Me.DewStrap1ToggleBtn.Location = New System.Drawing.Point(7, 22)
         Me.DewStrap1ToggleBtn.Name = "DewStrap1ToggleBtn"
-        Me.DewStrap1ToggleBtn.Size = New System.Drawing.Size(91, 49)
+        Me.DewStrap1ToggleBtn.Size = New System.Drawing.Size(68, 49)
         Me.DewStrap1ToggleBtn.TabIndex = 0
         Me.DewStrap1ToggleBtn.Text = "Power On/Off"
         Me.DewStrap1ToggleBtn.UseVisualStyleBackColor = True
@@ -270,10 +276,10 @@ Partial Class LGOMain
         Me.FansGroup.BackColor = System.Drawing.SystemColors.ControlLight
         Me.FansGroup.Controls.Add(Me.FansStatusBtn)
         Me.FansGroup.Controls.Add(Me.FansToggleBtn)
-        Me.FansGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FansGroup.Location = New System.Drawing.Point(959, 204)
+        Me.FansGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FansGroup.Location = New System.Drawing.Point(1006, 204)
         Me.FansGroup.Name = "FansGroup"
-        Me.FansGroup.Size = New System.Drawing.Size(200, 84)
+        Me.FansGroup.Size = New System.Drawing.Size(153, 84)
         Me.FansGroup.TabIndex = 9
         Me.FansGroup.TabStop = False
         Me.FansGroup.Text = "Telescope Fans"
@@ -283,9 +289,9 @@ Partial Class LGOMain
         Me.FansStatusBtn.BackColor = System.Drawing.Color.Red
         Me.FansStatusBtn.Enabled = False
         Me.FansStatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FansStatusBtn.Location = New System.Drawing.Point(113, 21)
+        Me.FansStatusBtn.Location = New System.Drawing.Point(83, 19)
         Me.FansStatusBtn.Name = "FansStatusBtn"
-        Me.FansStatusBtn.Size = New System.Drawing.Size(75, 50)
+        Me.FansStatusBtn.Size = New System.Drawing.Size(65, 50)
         Me.FansStatusBtn.TabIndex = 7
         Me.FansStatusBtn.Text = "FANS OFF"
         Me.FansStatusBtn.UseVisualStyleBackColor = False
@@ -293,9 +299,9 @@ Partial Class LGOMain
         'FansToggleBtn
         '
         Me.FansToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FansToggleBtn.Location = New System.Drawing.Point(13, 22)
+        Me.FansToggleBtn.Location = New System.Drawing.Point(9, 21)
         Me.FansToggleBtn.Name = "FansToggleBtn"
-        Me.FansToggleBtn.Size = New System.Drawing.Size(91, 49)
+        Me.FansToggleBtn.Size = New System.Drawing.Size(68, 49)
         Me.FansToggleBtn.TabIndex = 0
         Me.FansToggleBtn.Text = "Power On/Off"
         Me.FansToggleBtn.UseVisualStyleBackColor = True
@@ -310,13 +316,23 @@ Partial Class LGOMain
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.RoofStatusBtn)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(40, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(299, 171)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Roof Control"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(9, 117)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(201, 24)
+        Me.Label23.TabIndex = 14
+        Me.Label23.Text = "EMERGENCY STOP"
         '
         'EStop_Btn
         '
@@ -354,7 +370,7 @@ Partial Class LGOMain
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(29, 70)
+        Me.Label2.Location = New System.Drawing.Point(36, 70)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(133, 13)
         Me.Label2.TabIndex = 12
@@ -397,8 +413,8 @@ Partial Class LGOMain
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button5)
-        Me.GroupBox2.Controls.Add(Me.Button6)
-        Me.GroupBox2.Controls.Add(Me.Button7)
+        Me.GroupBox2.Controls.Add(Me.Relay10StatusBtn)
+        Me.GroupBox2.Controls.Add(Me.Relay9StatusBtn)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.Relay8StatusBtn)
         Me.GroupBox2.Controls.Add(Me.Label14)
@@ -419,7 +435,7 @@ Partial Class LGOMain
         Me.GroupBox2.Controls.Add(Me.Relay3StatusBtn)
         Me.GroupBox2.Controls.Add(Me.Relay2StatusBtn)
         Me.GroupBox2.Controls.Add(Me.Relay1StatusBtn)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(361, 15)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(514, 168)
@@ -547,25 +563,25 @@ Partial Class LGOMain
         Me.Button5.Text = "NIU"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'Button6
+        'Relay10StatusBtn
         '
-        Me.Button6.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Button6.Location = New System.Drawing.Point(184, 88)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(40, 25)
-        Me.Button6.TabIndex = 25
-        Me.Button6.Text = "NIU"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.Relay10StatusBtn.BackColor = System.Drawing.Color.Red
+        Me.Relay10StatusBtn.Location = New System.Drawing.Point(184, 88)
+        Me.Relay10StatusBtn.Name = "Relay10StatusBtn"
+        Me.Relay10StatusBtn.Size = New System.Drawing.Size(40, 25)
+        Me.Relay10StatusBtn.TabIndex = 25
+        Me.Relay10StatusBtn.Text = "OFF"
+        Me.Relay10StatusBtn.UseVisualStyleBackColor = False
         '
-        'Button7
+        'Relay9StatusBtn
         '
-        Me.Button7.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Button7.Location = New System.Drawing.Point(131, 88)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(40, 25)
-        Me.Button7.TabIndex = 24
-        Me.Button7.Text = "NIU"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.Relay9StatusBtn.BackColor = System.Drawing.Color.Red
+        Me.Relay9StatusBtn.Location = New System.Drawing.Point(131, 88)
+        Me.Relay9StatusBtn.Name = "Relay9StatusBtn"
+        Me.Relay9StatusBtn.Size = New System.Drawing.Size(40, 25)
+        Me.Relay9StatusBtn.TabIndex = 24
+        Me.Relay9StatusBtn.Text = "OFF"
+        Me.Relay9StatusBtn.UseVisualStyleBackColor = False
         '
         'Label15
         '
@@ -592,7 +608,7 @@ Partial Class LGOMain
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(18, 100)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(41, 13)
+        Me.Label14.Size = New System.Drawing.Size(47, 13)
         Me.Label14.TabIndex = 21
         Me.Label14.Text = "Bank 2"
         '
@@ -601,7 +617,7 @@ Partial Class LGOMain
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(18, 27)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(41, 13)
+        Me.Label13.Size = New System.Drawing.Size(47, 13)
         Me.Label13.TabIndex = 20
         Me.Label13.Text = "Bank 1"
         '
@@ -829,7 +845,7 @@ Partial Class LGOMain
         Me.GroupBox3.BackColor = System.Drawing.SystemColors.ControlLight
         Me.GroupBox3.Controls.Add(Me.IRStatusBtn)
         Me.GroupBox3.Controls.Add(Me.IRToggleBtn)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(959, 82)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(200, 101)
@@ -859,21 +875,71 @@ Partial Class LGOMain
         Me.IRToggleBtn.Text = "Power On/Off"
         Me.IRToggleBtn.UseVisualStyleBackColor = True
         '
-        'Label23
+        'GroupBox4
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(209, 154)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(85, 13)
-        Me.Label23.TabIndex = 14
-        Me.Label23.Text = "Emergency Stop"
+        Me.GroupBox4.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox4.Controls.Add(Me.Camera2StatusBtn)
+        Me.GroupBox4.Controls.Add(Me.Camera2ToggleBtn)
+        Me.GroupBox4.Controls.Add(Me.Camera1StatusBtn)
+        Me.GroupBox4.Controls.Add(Me.Camera1ToggleBtn)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(362, 204)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(314, 84)
+        Me.GroupBox4.TabIndex = 17
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Cameras"
+        '
+        'Camera2StatusBtn
+        '
+        Me.Camera2StatusBtn.BackColor = System.Drawing.Color.Red
+        Me.Camera2StatusBtn.Enabled = False
+        Me.Camera2StatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Camera2StatusBtn.Location = New System.Drawing.Point(237, 21)
+        Me.Camera2StatusBtn.Name = "Camera2StatusBtn"
+        Me.Camera2StatusBtn.Size = New System.Drawing.Size(65, 50)
+        Me.Camera2StatusBtn.TabIndex = 9
+        Me.Camera2StatusBtn.Text = "CAM2 OFF"
+        Me.Camera2StatusBtn.UseVisualStyleBackColor = False
+        '
+        'Camera2ToggleBtn
+        '
+        Me.Camera2ToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Camera2ToggleBtn.Location = New System.Drawing.Point(163, 22)
+        Me.Camera2ToggleBtn.Name = "Camera2ToggleBtn"
+        Me.Camera2ToggleBtn.Size = New System.Drawing.Size(68, 49)
+        Me.Camera2ToggleBtn.TabIndex = 8
+        Me.Camera2ToggleBtn.Text = "Power On/Off"
+        Me.Camera2ToggleBtn.UseVisualStyleBackColor = True
+        '
+        'Camera1StatusBtn
+        '
+        Me.Camera1StatusBtn.BackColor = System.Drawing.Color.Red
+        Me.Camera1StatusBtn.Enabled = False
+        Me.Camera1StatusBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Camera1StatusBtn.Location = New System.Drawing.Point(81, 22)
+        Me.Camera1StatusBtn.Name = "Camera1StatusBtn"
+        Me.Camera1StatusBtn.Size = New System.Drawing.Size(65, 50)
+        Me.Camera1StatusBtn.TabIndex = 7
+        Me.Camera1StatusBtn.Text = "CAM1 OFF"
+        Me.Camera1StatusBtn.UseVisualStyleBackColor = False
+        '
+        'Camera1ToggleBtn
+        '
+        Me.Camera1ToggleBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Camera1ToggleBtn.Location = New System.Drawing.Point(7, 22)
+        Me.Camera1ToggleBtn.Name = "Camera1ToggleBtn"
+        Me.Camera1ToggleBtn.Size = New System.Drawing.Size(68, 49)
+        Me.Camera1ToggleBtn.TabIndex = 0
+        Me.Camera1ToggleBtn.Text = "Power On/Off"
+        Me.Camera1ToggleBtn.UseVisualStyleBackColor = True
         '
         'LGOMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1195, 673)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.FanTimeRemainingTB)
@@ -900,6 +966,7 @@ Partial Class LGOMain
         Me.GroupBox2.PerformLayout()
         CType(Me.LGOPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -913,7 +980,7 @@ Partial Class LGOMain
     Friend WithEvents ScopeStatusBtn As System.Windows.Forms.Button
     Friend WithEvents ScopeToggleBtn As System.Windows.Forms.Button
     Friend WithEvents CamFocuserGroup As System.Windows.Forms.GroupBox
-    Friend WithEvents CamFocStatusBtn As System.Windows.Forms.Button
+    Friend WithEvents AuxStatusBtn As System.Windows.Forms.Button
     Friend WithEvents CamFocToggleBtn As System.Windows.Forms.Button
     Friend WithEvents DewStrapsGroup As System.Windows.Forms.GroupBox
     Friend WithEvents DewStrap2StatusBtn As System.Windows.Forms.Button
@@ -974,8 +1041,13 @@ Partial Class LGOMain
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Relay10StatusBtn As System.Windows.Forms.Button
+    Friend WithEvents Relay9StatusBtn As System.Windows.Forms.Button
     Friend WithEvents EStop_Btn As Button
     Friend WithEvents Label23 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Camera2StatusBtn As Button
+    Friend WithEvents Camera2ToggleBtn As Button
+    Friend WithEvents Camera1StatusBtn As Button
+    Friend WithEvents Camera1ToggleBtn As Button
 End Class

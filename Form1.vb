@@ -13,8 +13,10 @@ Public Class LGOMain
     Public Status4 As Long 'Large heat trip on/off relay - Relay Bank #0 #4
     Public Status5 As Long 'Small heat strip on/off reay - Relay Bank #0 #5
     Public Status6 As Long 'Scope fans on/off relay - Relay Bank #0 #6
-    Public Status7 As Long 'Camera power on/off relay - Relay Bank #1 #7   
+    Public Status7 As Long 'AUX 12V on/off relay - Relay Bank #1 #7   
     Public Status8 As Long 'IR Illuminator on/off relay - Relay Bank #1 #1
+    Public Status9 As Long 'Camera 1 on/off relay - Relay Bank #1 #2
+    Public Status10 As Long 'Camera 2 on/off relay - Relay Bank #1 #3
     Public Abort As Long = 0
     Public ComPort As String
  
@@ -106,6 +108,8 @@ Public Class LGOMain
         Status6 = NcdComponent1.ProXR.RelayBanks.GetStatusInBank(6, 1)
         Status7 = NcdComponent1.ProXR.RelayBanks.GetStatusInBank(7, 2)
         Status8 = NcdComponent1.ProXR.RelayBanks.GetStatusInBank(0, 2)
+        Status9 = NcdComponent1.ProXR.RelayBanks.GetStatusInBank(1, 2)
+        Status10 = NcdComponent1.ProXR.RelayBanks.GetStatusInBank(2, 2)
 
         'Set status of relay status buttons and equipment status buttons
         If Status0 = 1 Then
@@ -181,13 +185,13 @@ Public Class LGOMain
         End If
 
         If Status7 = 1 Then
-            CamFocStatusBtn.BackColor = Color.Lime
-            CamFocStatusBtn.Text = "CAMERA FOCUSER ON"
+            AuxStatusBtn.BackColor = Color.Lime
+            AuxStatusBtn.Text = "AUX 12V ON"
             Button3.BackColor = Color.Lime
             Button3.Text = "ON"
         Else
-            CamFocStatusBtn.BackColor = Color.Red
-            CamFocStatusBtn.Text = "CAMERA FOCUSER OFF"
+            AuxStatusBtn.BackColor = Color.Red
+            AuxStatusBtn.Text = "AUX 12V OFF"
             Button3.BackColor = Color.Red
             Button3.Text = "OFF"
         End If
@@ -202,6 +206,30 @@ Public Class LGOMain
             IRStatusBtn.Text = "IR ILLUM. OFF"
             Relay8StatusBtn.BackColor = Color.Lime
             Relay8StatusBtn.Text = "ON"
+        End If
+
+        If Status9 = 0 Then
+            Camera1StatusBtn.BackColor = Color.Lime
+            Camera1StatusBtn.Text = "CAM1 ON"
+            Relay9StatusBtn.BackColor = Color.Red
+            Relay9StatusBtn.Text = "OFF"
+        Else
+            Camera1StatusBtn.BackColor = Color.Red
+            Camera1StatusBtn.Text = "CAM1 OFF"
+            Relay9StatusBtn.BackColor = Color.Lime
+            Relay9StatusBtn.Text = "ON"
+        End If
+
+        If Status10 = 0 Then
+            Camera2StatusBtn.BackColor = Color.Lime
+            Camera2StatusBtn.Text = "CAM2 ON"
+            Relay10StatusBtn.BackColor = Color.Red
+            Relay10StatusBtn.Text = "OFF"
+        Else
+            Camera2StatusBtn.BackColor = Color.Red
+            Camera2StatusBtn.Text = "CAM2 OFF"
+            Relay10StatusBtn.BackColor = Color.Lime
+            Relay10StatusBtn.Text = "ON"
         End If
 
         Exit Sub
@@ -311,7 +339,7 @@ ErrorHandler:
 
     Sub RoofRelaysOff()
         UpdateRelayStatus()
-        'Check roof relays to make sure none of them are on when program loads. If any are on, turn them off
+        'Check roof relays to make sure none of them are on when program loads or initiate Emergency Stop. If any are on, turn them off
 
         If Status1 = 1 Or Status2 = 1 Or Status3 = 1 Then
             If Status1 = 1 Then
@@ -344,8 +372,8 @@ ErrorHandler:
             RoofOpenBtn.Enabled = False
         Else
             MessageBox.Show("Roof Appears To Be Partially Open!") 'If ADCs are not configured properly for either position, show warning and disable buttons
-            RoofCloseBtn.Enabled = False
-            RoofOpenBtn.Enabled = False
+            RoofCloseBtn.Enabled = True
+            RoofOpenBtn.Enabled = True
             RoofStatusBtn.BackColor = Color.White
             RoofStatusBtn.Text = "UNKNOWN"
         End If
@@ -527,12 +555,50 @@ ErrorHandler:
 
     Private Sub EStop_Btn_Click(sender As Object, e As EventArgs) Handles EStop_Btn.Click
 
-        NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(2, 1) 'Turn off all roof motion relays
-        NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(1, 1)
-        NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(3, 1)
+        'NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(2, 1) 'Turn off all roof motion relays
+        'NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(1, 1)
+        'NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(3, 1)
 
-        MessageBox.Show("Roof Motion Emergency Stop!") 'If ADCs are not configured properly for either position, show warning and disable buttons
+        RoofRelaysOff() 'call sub that turns all roof relays off
+        UpdateRelayStatus()
+
+
+
+        MessageBox.Show("Roof Motion Emergency Stop!") 'MEssage box for E-stop
 
     End Sub
 
+    Private Sub DewStrap1StatusBtn_Click(sender As Object, e As EventArgs) Handles DewStrap1StatusBtn.Click
+
+    End Sub
+
+    Private Sub Camera1ToggleBtn_Click(sender As Object, e As EventArgs) Handles Camera1ToggleBtn.Click
+        'Toggle Camera #1 Power
+        UpdateRelayStatus() 'Get relay status
+
+        If Status9 = 0 Then 'If relay is off, turn it on
+            NcdComponent1.ProXR.RelayBanks.TurnOnRelayInBank(1, 2)
+        Else 'If relay is on, turn it off
+            NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(1, 2)
+        End If
+
+        'Update status buttons
+        UpdateRelayStatus()
+    End Sub
+
+    Private Sub Camera2ToggleBtn_Click(sender As Object, e As EventArgs) Handles Camera2ToggleBtn.Click
+
+        'Toggle Camera #2 Power
+        UpdateRelayStatus() 'Get relay status
+
+        If Status10 = 0 Then 'If relay is off, turn it on
+            NcdComponent1.ProXR.RelayBanks.TurnOnRelayInBank(2, 2)
+        Else 'If relay is on, turn it off
+            NcdComponent1.ProXR.RelayBanks.TurnOffRelayInBank(2, 2)
+        End If
+
+        'Update status buttons
+        UpdateRelayStatus()
+
+    End Sub
 End Class
